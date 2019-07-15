@@ -1,0 +1,21 @@
+{% extends 'helphab_app/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div id="content-container" class="container p-none">
+        <div class="lgn-container col-lg-8">
+            <form method="get" action="{% url 'helphab_app:signup' %}">
+                {% csrf_token %}
+
+                <input type="submit" value="Signup"
+                       class="btn btn-primary pull-right" />
+            </form>
+            <form method="get" action="{% url 'helphab_app:login' %}">
+                {% csrf_token %}
+
+                <input type="submit" value="Login"
+                       class="btn btn-primary pull-right" />
+            </form>
+        </div>
+    </div>
+{% endblock content %}

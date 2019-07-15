@@ -1,0 +1,20 @@
+{% extends 'helphab_app/base.html' %}
+{% block title %}Questions Detail{% endblock title %}
+
+{% block content %}
+    <div id="content-container" class="container p-none">
+        <ul id="co-list" class="strip-list col-md-12 p-none">
+{#            {% include 'helphab_app/question_item_view.html' %}#}
+            {% for detail in details %}
+                {{ detail.question_title}} |
+                {{ detail.question_details }} |
+                {{ detail.user_rec }} |
+{#                {{ detail.budget }} |#}
+{#                {{ detail.deadline }} |#}
+{#                {{ detail.field }} |#}
+{#                {{ detail.urgency }}#}
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

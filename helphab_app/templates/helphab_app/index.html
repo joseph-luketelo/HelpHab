@@ -1,0 +1,32 @@
+{% extends 'helphab_app/base.html' %}
+{% block title %}Home{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+
+{% block content %}
+<div class="main_dashboard_container">
+    <div class="mkt-s1">
+    <div class="mkt-s1-body container ">
+        <div class="row">
+            <h1 class="col-md-8">Welcome {{ user }}</h1>
+        </div>
+    </div>
+    </div>
+	<div id="dashboard_sidebar">
+		<div class="sidebar_content_dashboard">
+			<div class="sidebar_uinfo">
+				<div class="s-u-photo">
+					<a href="/wizard"><img alt="" src="_data/avatars/14/s_4231609149503708860599334148475521134.jpg"></a>
+				</div>
+			</div>
+			<ul id="s-t-menu">
+				<li><a href="#"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+				<li><a href="#"><i class="fa fa-envelope"></i>Messages</a></li>
+				<li><a href="/questions"><i class="fa fa-question-circle"></i>Questions</a></li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+<a href="/login">logout</a>
+{% endblock content %}

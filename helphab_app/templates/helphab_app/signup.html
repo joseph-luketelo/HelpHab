@@ -1,0 +1,100 @@
+{% extends 'helphab_app/base.html' %}
+{% load static %}
+{% block title %}Signup{% endblock title %}
+{% block content %}
+    <!DOCTYPE html>
+<html>
+  <head>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="{% static 'css/signup.css' %}" type="text/css" />
+<!------ Include the above in your HEAD tag ---------->
+  </head>
+  <body id="SignupForm">
+    <div id="content-container" class="container p-none">
+        <div class="side-p">
+            <form id="msform" action="." method="post">
+                {% csrf_token %}
+                {# Username & Password Section #}
+                <h3>Signup for a HelpHab Account</h3>
+                <br><br>
+                <h5 class="sn-sh">CREATE A USERNAME AND PASSWORD</h5>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>{{ form.username.label }}</th>
+                            <th>{{ form.email.label }}</th>
+                        </tr>
+                        <tr>
+                            <td>{{ form.username }}</td>
+                            <td>{{ form.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.username.errors }}</td>
+                            <td>{{ form.email.errors }}</td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <th>Confirm Password</th>
+                        </tr>
+                        <tr>
+                            <td>{{ form.password1 }}</td>
+                            <td>{{ form.password2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.password1.errors }}</td>
+                            <td>{{ form.password2.errors }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {# Billing Address Section #}
+                    <h5 class="sn-sh">YOUR BILLING ADDRESS</h5>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>{{ form.first_name.label }}</th>
+                                <th>{{ form.last_name.label }}</th>
+                            </tr>
+                            <tr>
+                                <td>{{ form.first_name }}</td>
+                                <td>{{ form.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.first_name.errors }}</td>
+                                <td>{{ form.last_name.errors }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ form.address_one.label }}</th>
+                                <th>{{ form.address_two.label }}</th>
+                            </tr>
+                            <tr>
+                                <td>{{ form.address_one }}</td>
+                                <td>{{ form.address_two }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.address_one.errors }}</td>
+                                <td>{{ form.address_two.errrors }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ form.city.label }}</th>
+                                <th>{{ form.state.label }}</th>
+                            </tr>
+                            <tr>
+                                <td>{{ form.city }}</td>
+                                <td>{{ form.state }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.city.errors }}</td>
+                                <td>{{ form.state.errors }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <input class="btn btn-primary" type="submit" value="submit">
+            </form>
+            {# Credit Card Section #}
+        </div>
+    </div>
+  </body>
+<html>
+{% endblock content %}
